@@ -10,8 +10,15 @@ import os
 vcodec =   "libx264"
 filename = "final.mp4"
 vlist   = "video.list"
+
+# The range of the CRF scale is 0–51, where 0 is lossless, 23 is the default, and 51 is worst quality possible.
+# A lower value generally leads to higher quality, and a subjectively sane range is 17–28. 
+# Consider 17 or 18 to be visually lossless or nearly so
+videoquality = "23"
+# slow, ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow
+compression = "slow"
 # included extensions of files which will be processed
-extensions = ["mp4"]
+extensions = ["mp4","avi"]
 # max characters: 18 
 txtfontsize = 60
 
@@ -61,7 +68,7 @@ def convert(clips,tofile):
 
 	# Write the result to a file
 	print("Final clip length is " + str(datetime.timedelta(seconds=final_clip.end)))
-	final_clip.write_videofile(tofile,fps=24, codec=vcodec,preset="slow",ffmpeg_params=["-crf","22"])
+	final_clip.write_videofile(tofile,fps=24, codec=vcodec,preset=compression,ffmpeg_params=["-crf",videoquality])
 
 def main(argv):
 	if len(argv) < 2:
