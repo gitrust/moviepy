@@ -1,7 +1,7 @@
 # Collection of movie.py scripts
 
 
-## Videoeditor moviepy (python basiert)
+## Videoeditor moviepy (based on python)
 
 http://zulko.github.io/moviepy
 
