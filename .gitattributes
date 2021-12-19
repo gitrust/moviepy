@@ -9,6 +9,7 @@
 *.md		    text
 Dockerfile  text eol=lf
 Makefile    text eol=lf
+requirements.txt  text eol=lf
 
 
 # Program files / Libraries
