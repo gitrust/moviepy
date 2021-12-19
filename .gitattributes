@@ -7,7 +7,8 @@
 
 # Documents
 *.md		    text
-Dockerfile  text
+Dockerfile  text eol=lf
+Makefile    text eol=lf
 
 
 # Program files / Libraries
