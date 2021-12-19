@@ -1,4 +1,4 @@
-# Collection of movie.py scripts
+# Collection of movie.py experiments
 
 
 ## Videoeditor moviepy (based on python)
@@ -6,17 +6,14 @@
 http://zulko.github.io/moviepy
 
 
-## Installation of movie.py for ubuntu
+## Run examples
 
-	sudo apt-get install ez_setup
-	sudo apt-get install python-pip
-	sudo apt-get install python-numpy
-	sudo pip install moviepy
+To run examples using Docker
 
-## Installation of gizeh
-
-	sudo apt-get install python-dev python-pip ffmpeg libffi-dev
-	sudo pip install gizeh
+1. install docker
+2. build docker image by `make build`
+3. run docker image by `make run`
+4. now run examples, e.g. `python src/text/concat-text.py`
 
 
 ## Video Codec
@@ -40,19 +37,6 @@ Some examples of codecs are:
 ## rule of thumb for video size
 
 	filesize (in MB) = (bitrate in Mbit/s / 8) * (video length in seconds)
-
-
-
-## Installation on Windows
-
-* Install python 3.x
-* Install pip for python 3.x
-* Install moviepy with pip "pip install moviepy"
-* Adapt moviepy configuration for IMAGEMAGICK
-** in "PYTHONPATH/lib/site-packages/moviepy/config_defaults.py" or
-** or set sys environment variable bevore execution of python script 
-
-    IMAGEMAGICK_BINARY = "C:\\Program Files\\ImageMagick_VERSION\\magick.exe"
 
 ## ffmpeg options for hiqh quality encoding
 
