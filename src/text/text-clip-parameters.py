@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import moviepy.editor as mpy
 
 # list all available fonts

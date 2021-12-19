@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from moviepy.editor import *
 import sys
 
@@ -7,7 +10,7 @@ mytext =   "My Text"
 vcodec =   "libx264"
 input = "mrbean.mp4"
 output = "final.mp4"
-# max characters: 18 
+# max characters: 18
 txtfontsize = 60
 
 clips = [VideoFileClip(input,audio_buffersize=15000).subclip("00:10:00","00:10:03.6")]

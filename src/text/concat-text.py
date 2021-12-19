@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import moviepy.editor as mpy
 
 roles = ["Batman", "Gandalf", "Han Solo", "Luke"]

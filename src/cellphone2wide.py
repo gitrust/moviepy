@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import sys
 import datetime
@@ -12,7 +14,7 @@ import scipy.ndimage as ndimage
 vcodec =   "libx264"
 
 # The range of the CRF scale is 0–51, where 0 is lossless, 23 is the default, and 51 is worst quality possible.
-# A lower value generally leads to higher quality, and a subjectively sane range is 17–28. 
+# A lower value generally leads to higher quality, and a subjectively sane range is 17–28.
 # Consider 17 or 18 to be visually lossless or nearly so
 videoquality = "24"
 # slow, ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow
@@ -60,7 +62,7 @@ def get_rotation(file_path_with_file_name):
         rotation = 0
 
     return rotation
-    
+
 def cellphone2wide(clip,newsize):
     w,h = moviesize = clip.size
     movie = vfx.rotate(clip, -90).resize(height=720)
@@ -73,17 +75,17 @@ def cellphone2wide(clip,newsize):
     return CompositeVideoClip([bg,movie.set_pos("center")]).set_duration(movie.duration)
     #return bg
 
-    
+
 def main(argv):
     if len(argv) < 1:
         print("Usage: cellphone2wide.py videofile")
         sys.exit(0)
-        
+
     videofile = argv[0]
     clip = VideoFileClip(videofile,audio_buffersize=15000)
     clip = cellphone2wide(clip,clip.size)
     write(clip,"final.mp4")
-    
-    
+
+
 if __name__=='__main__':
     main(sys.argv[1:])
