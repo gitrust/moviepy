@@ -1,13 +1,12 @@
-from moviepy.editor import *
+
 import sys
 import datetime
 import subprocess
-import os
+import json
+from moviepy.editor import *
 import moviepy.video.fx.all as vfx
 import scipy.ndimage as ndimage
 
-# Combines video files in a given directory to one file with an additional title
-#
 
 # settings
 vcodec =   "libx264"
@@ -22,15 +21,14 @@ compression = "slow"
 extensions = ["mp4","avi","mov"]
 
 
-def write(clip,tofile):
-        # Write the result to a file
+def write(clip, tofile):
+    # Write the result to a file
     print("Final clip length is " + str(datetime.timedelta(seconds=clip.end)))
     clip.write_videofile(tofile,threads=4,fps=24, codec=vcodec,preset=compression,ffmpeg_params=["-crf",videoquality])
 
 # blur image
 # sigma=5 - very blurred
 def blur(img,sigma=3):
-	
 	return ndimage.gaussian_filter(img, sigma)
 
 # zoom fx
@@ -78,7 +76,7 @@ def cellphone2wide(clip,newsize):
     
 def main(argv):
     if len(argv) < 1:
-        print("Usage: video.py videofile")
+        print("Usage: cellphone2wide.py videofile")
         sys.exit(0)
         
     videofile = argv[0]

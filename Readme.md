@@ -30,17 +30,12 @@ For other extensions, the output filename must be set accordingly.
 
 Some examples of codecs are:
 
-* 'libx264' (default codec for file extension .mp4) makes well-compressed videos (quality tunable using ‘bitrate’).
-
-* 'mpeg4' (other codec for extension .mp4) can be an alternative to 'libx264', and produces higher quality videos by default.
-
-* 'rawvideo' (use file extension .avi) will produce a video of perfect quality, of possibly very huge size.
-
+* 'libx264' (default codec for file extension .mp4) makes well-compressed videos (quality tunable using ‘bitrate’)
+* 'mpeg4' (other codec for extension .mp4) can be an alternative to 'libx264', and produces higher quality videos by default
+* 'rawvideo' (use file extension .avi) will produce a video of perfect quality, of possibly very huge size
 * png (use file extension .avi) will produce a video of perfect quality, of smaller size than with rawvideo
-
-* 'libvorbis' (use file extension .ogv) is a nice video format, which is completely free/ open source. However not everyone has the codecs installed by default on their machine.
-
-* 'libvpx' (use file extension .webm) is tiny a video format well indicated for web videos (with HTML5). Open source.
+* 'libvorbis' (use file extension .ogv) is a nice video format, which is completely free/ open source. However not everyone has the codecs installed by default on their machine
+* 'libvpx' (use file extension .webm) is tiny a video format well indicated for web videos (with HTML5). Open source
 
 ## rule of thumb for video size
 

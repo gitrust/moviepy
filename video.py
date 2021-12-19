@@ -1,12 +1,17 @@
-from moviepy.editor import *
+"""
+  Combines video files in a given directory to one file with an additional title
+
+"""
+
+
 import sys
 import datetime
 import os
+from moviepy.editor import *
 import moviepy.video.fx.all as vfx
 import scipy.ndimage as ndimage
 
-# Combines video files in a given directory to one file with an additional title
-#
+
 
 # settings
 vcodec =   "libx264"
