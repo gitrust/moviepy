@@ -6,4 +6,4 @@ build:
 
 # Run docker image
 run:
-	docker run -it -v $(WORKDIR):/opt/app moviepy:latest /bin/bash
+	docker run -it -rm -v $(WORKDIR):/opt/app moviepy:latest /bin/bash
