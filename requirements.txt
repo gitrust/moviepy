@@ -1,2 +1,4 @@
 moviepy
 gizeh
+Pillow
+scipy

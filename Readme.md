@@ -41,3 +41,10 @@ Some examples of codecs are:
 ## ffmpeg options for hiqh quality encoding
 
 * https://trac.ffmpeg.org/wiki/Encode/H.264
+
+
+# References
+
+- Some sample videos are taken from https://www.pexels.com
+- https://www.pexels.com/video/close-up-view-of-a-lava-lamp-2000817/
+- https://www.pexels.com/video/water-abstract-art-oil-drops-4156092/
