@@ -42,9 +42,29 @@ Some examples of codecs are:
 
 * https://trac.ffmpeg.org/wiki/Encode/H.264
 
+## Preparing sample videos
+
+Cut videos to 5 seconds, remove audio and resize to 500:300
+
+```
+ffmpeg -i input.mp4 -to 00:00:05  -an -vf scale=500:300 output.mp4
+```
+
+## Used libraries
+
+- OpenCV
+- Numpy
+- Scipy
+- Pillow
+
+## Notes
+
+- OpenCV works with numpy arrays
+
 
 # References
 
 - Some sample videos are taken from https://www.pexels.com
 - https://www.pexels.com/video/close-up-view-of-a-lava-lamp-2000817/
 - https://www.pexels.com/video/water-abstract-art-oil-drops-4156092/
+- https://gist.github.com/hashABCD/58f7c94bc5b22c0bd3e1192a7690e1d1#file-img2sketch
