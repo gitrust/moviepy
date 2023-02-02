@@ -32,6 +32,8 @@ extensions = ["mp4","avi","mov"]
 # max characters: 18
 txtfontsize = 60
 
+def clip_len(clip):
+    return datetime.timedelta(seconds=clip.end)
 
 def listfiles(path):
 	f=[]
@@ -91,7 +93,7 @@ def write(clip,tofile):
 
 # zoom fx
 # clip.fx(zoom,factor=1)
-def zoom(clip, factor):
+def zoom(clip, factor=1):
     c = (1-1.0/factor) / 2
     x_crop = int(c * clip.w)
     y_crop = int(c * clip.h)

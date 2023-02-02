@@ -69,11 +69,10 @@ def cellphone2wide(clip,newsize):
 
     # background clip, rotated and stretched, blurred, zoom in
     bg = movie.resize(newsize).without_audio().fl_image(blur).fx(zoom,2)
-    print(str(bg.size))
+    #print(str(bg.size))
     # a compose of both clips
     # position original movie at center
     return CompositeVideoClip([bg,movie.set_pos("center")]).set_duration(movie.duration)
-    #return bg
 
 
 def main(argv):
@@ -82,9 +81,9 @@ def main(argv):
         sys.exit(0)
 
     videofile = argv[0]
-    clip = VideoFileClip(videofile,audio_buffersize=15000)
+    clip = VideoFileClip(videofile,audio_buffersize=15000).without_audio().subclip(1,7)
     clip = cellphone2wide(clip,clip.size)
-    write(clip,"final.mp4")
+    write(clip,"result.mp4")
 
 
 if __name__=='__main__':
