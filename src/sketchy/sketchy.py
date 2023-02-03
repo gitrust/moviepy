@@ -12,8 +12,6 @@ import cv2
 
 def sketch_img(img):
     k_size = 7
-    #Read Image
-    #img=cv2.imread(img)
     
     # Convert to Grey Image
     grey_img=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -33,16 +31,6 @@ def sketch_img(img):
     sketch_img=cv2.divide(grey_img, invblur_img, scale=256.0)
 
     return sketch_img
-
-    # convert from numpy rgb array to Pillow Image
-    #image = Image.fromarray(img.astype('uint8'), 'RGB')
-    
-    # resize it to a relatively tiny size
-    #image_tiny = image.resize((50,50))
-    
-    # pixeliztion is resizing a smaller image into a larger one with some resampling
-    # convert back from Pillow Image to numpy array
-    #return np.asarray(image_tiny.resize(image.size,Image.NEAREST))
     
 def sketchy(clip):
     return clip.fl_image(sketch_img)
