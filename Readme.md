@@ -68,3 +68,5 @@ ffmpeg -i input.mp4 -to 00:00:05  -an -vf scale=500:300 output.mp4
 - https://www.pexels.com/video/close-up-view-of-a-lava-lamp-2000817/
 - https://www.pexels.com/video/water-abstract-art-oil-drops-4156092/
 - https://gist.github.com/hashABCD/58f7c94bc5b22c0bd3e1192a7690e1d1#file-img2sketch
+- https://pixabay.com/videos/jellyfish-sea-dangerous-underwater-26818/
+- https://pixabay.com/videos/skate-sport-water-action-exercise-110734/
