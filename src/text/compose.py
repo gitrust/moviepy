@@ -8,7 +8,7 @@ import sys
 # settings
 mytext =   "My Text"
 vcodec =   "libx264"
-input = "mrbean.mp4"
+input = "input.mp4"
 output = "final.mp4"
 # max characters: 18
 txtfontsize = 60

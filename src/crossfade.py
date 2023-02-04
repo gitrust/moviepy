@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+   Take multiple clips and compose them with a crossfade into a new clip
+"""
+
 from moviepy.editor import *
 
 
@@ -10,7 +14,7 @@ def crossfade(clips):
     clips = [clip.crossfadein(fade_duration) for clip in clips]
 
     # concatenate using compose method, fade out = 2 seconds
-    return concatenate(clips, padding = -fade_duration,method="compose").fadeout(2)
+    return concatenate(clips, padding = -fade_duration, method="compose").fadeout(2)
 
 def video_clip(file):
     return VideoFileClip(file).without_audio().subclip(t_end=5)

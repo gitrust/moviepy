@@ -4,5 +4,9 @@
 from moviepy.editor import *
 
 
-clip = (VideoFileClip("myvideo.mp4").subclip(10,15).resize(width=300))
-clip.write_gif("my.gif", fps=5)
+clip = (VideoFileClip("input.mp4")
+# shorten final clip and resize
+clipend = min(5, clip.end)
+clip = clip.subclip(0,clipend).resize(width=300))
+
+clip.write_gif("final.gif", fps=5)

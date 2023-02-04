@@ -10,13 +10,16 @@ build:
 run:
 	$(PYTHON) /bin/bash
 
-render-examples: render/sketchy.gif
+render-examples: render/sketchy.gif render/sketchy.gif
 
 render/pixelate.gif:
-	$(PYTHON) src/pixelate/pixelate.py samples/jellyfish.mp4 render/pixelate.gif
+	$(PYTHON) src/pixelate.py samples/bee1.mp4 render/pixelate.gif
 	
 render/crossfade.gif:
-	$(PYTHON) src/crossfade/crossfade.py samples/bee1.mp4 samples/bee2.mp4 render/crossfade.gif
+	$(PYTHON) src/crossfade.py samples/bee1.mp4 samples/bee2.mp4 render/crossfade.gif
 
 render/sketchy.gif:
-	$(PYTHON) src/sketchy/sketchy.py samples/skate.mp4 render/sketchy.gif
+	$(PYTHON) src/sketchy.py samples/bee1.mp4 render/sketchy.gif
+
+render/cartoonify.gif:
+	$(PYTHON) src/cartoonify.py samples/bee1.mp4 render/cartoonify.gif

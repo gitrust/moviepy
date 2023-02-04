@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+"""
+   Compose a new video of a collection of video subclips found in specified directory.
+   Use text as title for composed video.
+"""
+
 import fnmatch
 import os
 import sys
@@ -41,7 +46,7 @@ def create_clip(filename):
     end_clip = start_clip + cliplen
     clip = clip.without_audio().subclip(start_clip,end_clip)
 
-
+    # make clips fit into a given size
     if w > 600:
         clip = clip.fx( vfx.resize, width = 600)
     if h > 600:
@@ -52,15 +57,15 @@ def create_clip(filename):
 
 def compose_clips(clips):
     fade_duration = 1 # 1-second fade-in for each clip
-    #clips = [clip.crossfadein(fade_duration) for clip in clips]
-    #clip = concatenate_videoclips(clips) did not work
-    clip = concatenate(clips, padding = -fade_duration,method="compose")
-    return clip
+    return concatenate(clips, padding = -fade_duration,method="compose")
 
-def find_clips(dir):
+def find_clips(dir, ext):
+    """
+        Find video files in specified directory, filter for extension
+    """
     clips = []
     for root, dirnames, filenames in os.walk(dir):
-        for filename in fnmatch.filter(filenames, '*.avi'):
+        for filename in fnmatch.filter(filenames, ext):
             f = os.path.join(root, filename)
             print("Found " + f)
             try:
@@ -73,7 +78,7 @@ def find_clips(dir):
     return clips
 
 def main(argv):
-    clips = find_clips(argv[0])
+    clips = find_clips(argv[0], '*.avi')
     if len(clips) > 0:
         clip = compose_clips(clips)
         # , bitrate="500k",codec="mpeg4"

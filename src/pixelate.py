@@ -15,7 +15,7 @@ def pixelate_img(img):
     
     # pixeliztion is resizing a smaller image into a larger one with some resampling
     # convert back from Pillow Image to numpy array
-    return np.asarray(image_tiny.resize(image.size,Image.NEAREST))
+    return np.asarray(image_tiny.resize(image.size, Image.NEAREST))
     
 def pixelate(clip):
     return clip.fl_image(pixelate_img)

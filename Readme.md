@@ -1,4 +1,4 @@
-# Collection of movie.py experiments
+# Collection of moviepy experiments
 
 
 ## Videoeditor moviepy (based on python)
@@ -15,6 +15,32 @@ To run examples using Docker
 3. run docker image by `make run`
 4. now run examples, e.g. `python src/text/concat-text.py`
 
+
+## Howto
+
+### List available fonts
+
+```
+import moviepy.editor as mpy
+
+print(mpy.TextClip.list('font'))
+```
+
+### List background colors
+
+```
+import moviepy.editor as mpy
+
+print(mpy.TextClip.list('color'))
+```
+
+### Preparing sample videos
+
+Cut videos to 5 seconds, remove audio and resize to 500:300
+
+```
+ffmpeg -i input.mp4 -to 00:00:05 -an -vf scale=500:300 final.mp4
+```
 
 ## Video Codec
 
@@ -42,14 +68,6 @@ Some examples of codecs are:
 
 * https://trac.ffmpeg.org/wiki/Encode/H.264
 
-## Preparing sample videos
-
-Cut videos to 5 seconds, remove audio and resize to 500:300
-
-```
-ffmpeg -i input.mp4 -to 00:00:05  -an -vf scale=500:300 output.mp4
-```
-
 ## Used libraries
 
 - OpenCV
@@ -61,6 +79,18 @@ ffmpeg -i input.mp4 -to 00:00:05  -an -vf scale=500:300 output.mp4
 
 - OpenCV works with numpy arrays
 
+## Render examples
+
+### Crossfade
+![](render/crossfade.gif)
+
+### Pixelate
+
+![](render/pixelate.gif)
+
+### Sketchy
+
+![](render/sketchy.gif)
 
 # References
 

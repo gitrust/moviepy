@@ -6,14 +6,12 @@
 
 """
 
-
 import sys
 import datetime
 import os
 from moviepy.editor import *
 import moviepy.video.fx.all as vfx
 import scipy.ndimage as ndimage
-
 
 
 # settings
@@ -67,7 +65,7 @@ def files2clips(files):
 
 # blur image
 # sigma=5 - very blurred
-def blur(img,sigma=3):
+def blur_img(img,sigma=3):
 
 	return ndimage.gaussian_filter(img, sigma)
 
@@ -104,7 +102,7 @@ def withaudio(clip,audiofile):
 	clip.set_audio(audio)
 
 def blurclip(clip):
-	return clip.fl_image(blur)
+	return clip.fl_image(blur_img)
 
 # rotate a cellphone video
 #
@@ -117,7 +115,7 @@ def cellphone_rotate(clip,newsize,angle):
 	movie = clip.fx(vfx.rotate,angle,expand=True).resize(height=newsize[1])
 
 	# background clip, rotated and stretched, blurred, zoom in
-	bg = movie.resize(newsize).without_audio().fl_image(blur).fx(zoom,2)
+	bg = movie.resize(newsize).without_audio().fl_image(blur_img).fx(zoom,2)
 
 	# a compose of both clips
 	# position original movie at center
