@@ -19,7 +19,7 @@ def zoom(clip, factor=1):
 
 
 def main(argv):
-    clip = zoom(VideoFileClip(argv[0]))
+    clip = zoom(VideoFileClip(argv[0]), 3)
     clip.write_gif(argv[1], fps=5)
 
 

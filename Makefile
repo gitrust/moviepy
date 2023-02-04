@@ -23,3 +23,13 @@ render/sketchy.gif:
 
 render/cartoonify.gif:
 	$(PYTHON) src/cartoonify.py samples/bee1.mp4 render/cartoonify.gif
+
+render/zoom.gif:
+	$(PYTHON) src/zoom.py samples/bee1.mp4 render/zoom.gif
+
+extract_images:
+	$(PYTHON) src/extract_img.py render/cartoonify.gif
+	$(PYTHON) src/extract_img.py render/crossfade.gif
+	$(PYTHON) src/extract_img.py render/pixelate.gif
+	$(PYTHON) src/extract_img.py render/sketchy.gif
+	$(PYTHON) src/extract_img.py render/zoom.gif
