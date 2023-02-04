@@ -95,6 +95,7 @@ Some examples of codecs are:
 # References
 
 - Some sample videos are taken from https://www.pexels.com
+- https://github.com/AditiRastogi250701/Image-Cartoonifier/blob/main/Image%20Cartoonifier.py
 - https://www.pexels.com/video/close-up-view-of-a-lava-lamp-2000817/
 - https://www.pexels.com/video/water-abstract-art-oil-drops-4156092/
 - https://gist.github.com/hashABCD/58f7c94bc5b22c0bd3e1192a7690e1d1#file-img2sketch
