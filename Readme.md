@@ -81,16 +81,23 @@ Some examples of codecs are:
 
 ## Render examples
 
-### Crossfade
-![](render/crossfade.gif)
+### Original
+![](render/bee1.jpg)
+
+### Cartoonify
+![](render/cartoonify.gif.jpg)
 
 ### Pixelate
 
-![](render/pixelate.gif)
+![](render/pixelate.gif.jpg)
 
 ### Sketchy
 
-![](render/sketchy.gif)
+![](render/sketchy.gif.jpg)
+
+### Zoom
+
+![](render/zoom.gif.jpg)
 
 # References
 

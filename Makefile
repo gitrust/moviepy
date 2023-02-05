@@ -28,6 +28,7 @@ render/zoom.gif:
 	$(PYTHON) src/zoom.py samples/bee1.mp4 render/zoom.gif
 
 extract_images:
+	$(PYTHON) src/extract_img.py samples/bee1.mp4
 	$(PYTHON) src/extract_img.py render/cartoonify.gif
 	$(PYTHON) src/extract_img.py render/crossfade.gif
 	$(PYTHON) src/extract_img.py render/pixelate.gif
