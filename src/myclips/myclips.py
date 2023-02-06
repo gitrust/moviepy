@@ -3,7 +3,6 @@
 
 """
    Compose a new video of a collection of video subclips found in specified directory.
-   Use text as title for composed video.
 """
 
 import fnmatch
@@ -13,7 +12,6 @@ import datetime
 
 from moviepy.editor import *
 import moviepy.video.fx.all as vfx
-
 
 
 def with_text(video_clip, text):
@@ -26,13 +24,12 @@ def with_text(video_clip, text):
     # Overlay the text clip on the first video clip
     return CompositeVideoClip([video_clip, txt_clip])
 
-def create_clip(filename):
+def create_clip(filename, cliplen=3):
     clip = VideoFileClip(filename)
     duration = round(clip.duration)
     w,h = clip.size
 
     # length of subclip in seconds
-    cliplen = 3
     if duration < 3:
         cliplen = duration
 
@@ -52,6 +49,7 @@ def create_clip(filename):
     if h > 600:
         clip = clip.fx( vfx.resize, height = 500)
 
+    # render clip duration in seconds
     time_str = str(datetime.timedelta(seconds=duration, microseconds=0, milliseconds=0))
     return with_text(clip, time_str)
 
@@ -61,7 +59,7 @@ def compose_clips(clips):
 
 def find_clips(dir, ext):
     """
-        Find video files in specified directory, filter for extension
+        Find video files in specified directory, filter by extension
     """
     clips = []
     for root, dirnames, filenames in os.walk(dir):
@@ -73,15 +71,12 @@ def find_clips(dir, ext):
             except:
                 print("Error")
                 continue
-            if len(clips) > 10:
-                break
     return clips
 
 def main(argv):
     clips = find_clips(argv[0], '*.avi')
     if len(clips) > 0:
         clip = compose_clips(clips)
-        # , bitrate="500k",codec="mpeg4"
         clip.write_videofile("final.mp4", fps=24, bitrate="500k",codec="mpeg4")
 
 if __name__=='__main__':
