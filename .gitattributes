@@ -26,8 +26,6 @@ requirements.txt  text eol=lf
 *.tld		    text
 *.txt		    text
 *.xml		    text
-*.php       text
-*.sql       text
 *.yml       text
 *.py        text eol=lf
 
